@@ -1,29 +1,41 @@
 Answer each question in a written format
 
 1. What does semantic HTML mean?
+    -As opposed to indicating everything as one particular HTML tag (example: everything being a div), semantic HTML gives purpose to the tags that are being set in place. A <p> tag indicates that it is a paragraph while an <aside> tag would refer an element on the side of the page.
 
 2. What is the box model?
+    -The box model refers to the HTML layout of a webpage. You can use different attributes to style an element. Such attributes as 'padding', 'margin', and 'border' all play into what the box model is. When placing an element, keep the box model in mind and how it affects the elements on the page.
 
 3. What is the difference between IDs and Classes?
+    -ID's and Classes refer to classifying elements. Classes can be used amongst multiple tags and elemtns while ID's are meant for just one. ID's are considered to be more specific than classes.
 
 4. What is z-index (CSS property) useful for?
+    - The z-index is good for giving elements on a web page depth. The lower the z-index, the further back the element will be placed behind the higher ranked z-indexed elements.
 
 5. Summarize what the keyword 'this' is used for?
+    -'this' refers to the class or element it is placed within. When using 'this', you can bind a function to that class and use it on the outside.
 
 6. What is a callback? What are common uses for callbacks in JavaScript?
+    -Callbacks are functions that are invoked inside of another function. The callback function first returns its value before completing the original call of the function that called it.
 
 7. What is a closure and why is it useful?
+    -A closure refers to the scope of the environment. Closures allow you to access local variables from another function. The inner function (the closure) will have access to the outer function it is placed within. 
 
 8. How does a prototype work?
+    - A prototype works by adding an additional property to an original instance of an object.
 
 9. Describe what a component-based framework/library is?
+    -The component-based library allows developers to break the code that they write up into different blocks and sections. When writing code, components provide developers freedom to easily jump into a "code block" and quickly/easily make changes to small section of the code without changing functionality to the overall code.
 
 10. What is the component lifecycle in React?
+    -The component lifecycle refers to the actual life a component goes through. Starting from the constructor, the component follows different lifecycle hooks to go from 'creation' to 'death'.
 
 11. What is REST? (not just a description of the acronym)
-
+    -REST is a way to make HTTP requests. Using REST, you can make the normal CRUD (Create, Read, Update, Delete) calls to api's and servers.
 12. Name three common ways of getting data from a request (in Express.JS):
-
+    1) req.body
+    2) req.params
+    3) req.query
 
 
 -- =====================
@@ -37,9 +49,13 @@ email varchar(255)
 13. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
 -Get all users:
-
+    SELECT * FROM users;
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
-
+    INSERT INTO users(name,email) 
+    VALUES('ben','fake@fake.com')
 -Update the newly created user's name to 'Bobby Boy':
-
+    UPDATE users
+    SET name = 'Bobby Boy'
+    WHERE id = $1;
 -Delete the newly updated user:
+    DELETE FROM users where name = 'Bobby Boy';
